@@ -74,7 +74,7 @@
  * |  ESC  |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Z   |   U   |   I   |   O   |   P   |   Ü   |
  * |   ß   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
  * | CTRL  |   Y   |   X   |   C   |   V   |   B   | none  |-------------------|  none |   N   |   M   |   ,   |   .   |   -   | ENTER |
- *                                 |  GUI  | BSPC  | SHFT  |  Nav  |---| Sym - | SPACE |  Num  |  none |
+ *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---| Sym - | SPACE |  Num  |  none |
  *  
  */
 
@@ -90,21 +90,38 @@
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
         russian_layer {
-            /* RUS
+            /* RUS            
+            
  * -------------------------------------------------------------------------------------------------------------------------------------
- * |   Ё   |   Ы   |   У   |   E   |   И   |   Ш   |-----------------------------------|   Щ   |   К   |   С   |   Д   |   З   |   Ц   |
- * |   Ъ   |   .   |   Я   |   А   |   О   |   Ж   |-----------------------------------|   Г   |   Т   |   Н   |   В   |   М   |   Ч   |
- * | CTRL  |   Ю   |   Й   |   Ь   |   Э   |   Ф   | none  |-------------------|  none |   Х   |   П   |   Р   |   Л   |   Б   | ENTER |
+ * |   Ё   |   Й   |   Ц   |   У   |   К   |   Е   |-----------------------------------|   Н   |   Г   |   Ш   |   Щ   |   З   |   Х   |
+ * |   Ъ   |   Ф   |   Ы   |   В   |   А   |   П   |-----------------------------------|   Р   |   О   |   Л   |   Д   |   Ж   |   Э   |
+ * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  none |   Т   |   Ь   |   Б   |   Ю   |   .   | ENTER |
  *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---|  Sym  | SPACE |  Num  |  none |
  */
-            bindings = <
-&kp GRAVE  &kp S      &kp E  &kp T  &kp B    &kp I                                       &kp O     &kp R  &kp C  &kp L  &kp P      &kp W
-&kp RBKT   &kp SLASH  &kp Z  &kp F  &kp J    &kp SEMI                                    &kp U     &kp N  &kp Y  &kp D  &kp V      &kp X
-&kp LCTRL  &kp DOT    &kp Q  &kp M  &kp SQT  &kp A     &trans                    &trans  &kp LBKT  &kp G  &kp H  &kp K  &kp COMMA  &kp ENTER
+           bindings = <
+&kp GRAVE         &kp Q  &kp W  &kp E  &kp R     &kp T                                   &kp Y  &kp U  &kp I    &kp O      &kp P            &kp LBKT
+&kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                   &kp H  &kp J  &kp K    &kp L      &kp SEMI         &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                    &none   &kp N  &kp M    &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
                                     &trans   &trans    &trans  &trans    &trans  &trans  &trans    &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+           /* RUS
+ * ------------------------------------------------------------------------------------------------------------------------------------- BULGARIAN LAYOUT
+ * |   Ё   |   Ы   |   У   |   E   |   И   |   Ш   |-----------------------------------|   Щ   |   К   |   С   |   Д   |   З   |   Ц   |
+ * |   Ъ   |   .   |   Я   |   А   |   О   |   Ж   |-----------------------------------|   Г   |   Т   |   Н   |   В   |   М   |   Ч   |
+ * | CTRL  |   Ю   |   Й   |   Ь   |   Э   |   Ф   | none  |-------------------|  none |   Х   |   П   |   Р   |   Л   |   Б   | ENTER |
+ *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---|  Sym  | SPACE |  Num  |  none |
+ *
+ *           bindings = <
+ * &kp GRAVE  &kp S      &kp E  &kp T  &kp B    &kp I                                       &kp O     &kp R  &kp C  &kp L  &kp P      &kp W
+ * &kp RBKT   &kp SLASH  &kp Z  &kp F  &kp J    &kp SEMI                                    &kp U     &kp N  &kp Y  &kp D  &kp V      &kp X
+ * &kp LCTRL  &kp DOT    &kp Q  &kp M  &kp SQT  &kp A     &trans                    &trans  &kp LBKT  &kp G  &kp H  &kp K  &kp COMMA  &kp ENTER
+ *                                     &trans   &trans    &trans  &trans    &trans  &trans  &trans    &none
+ *             >;
+ *             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+ *        };
+ */
         sym_layer {
             /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
