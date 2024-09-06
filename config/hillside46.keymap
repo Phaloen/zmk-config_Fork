@@ -73,15 +73,15 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |  ESC  |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Z   |   U   |   I   |   O   |   P   |   Ü   |
  * |   ß   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
- * | CTRL  |   Y   |   X   |   C   |   V   |   B   | none  |-------------------|  none |   N   |   M   |   ,   |   .   |   -   | ENTER |
- *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---| Sym - | SPACE |  Num  |  none |
+ * | CTRL  |   Y   |   X   |   C   |   V   |   B   | none  |-------------------|  GUI  |   N   |   M   |   ,   |   .   |   -   | trans |
+ *                                 |  GUI  |  Sym  | SHIFT |  Nav  |---| CTRL  | SPACE |  Num  |  none |
  *  
  */
 
             bindings = <
 &kp ESCAPE        &kp Q  &kp W  &kp E  &kp R     &kp T                                                         &kp Y         &kp U  &kp I      &kp O    &kp P            &kp LBKT
 &kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                                         &kp H         &kp J  &kp K      &kp L    &kp SEMI         &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                                       &none      &kp N         &kp M  &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                                       &kp LGUI   &kp N         &kp M  &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
                                        &kp LGUI  &mo 2  &kp LSHIFT  &mo NAV_L    &kp RIGHT_CONTROL  &kp SPACE  &mo NUMBER_L  &none
             >;
 
@@ -95,12 +95,12 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |   Ё   |   Й   |   Ц   |   У   |   К   |   Е   |-----------------------------------|   Н   |   Г   |   Ш   |   Щ   |   З   |   Х   |
  * |   Ъ   |   Ф   |   Ы   |   В   |   А   |   П   |-----------------------------------|   Р   |   О   |   Л   |   Д   |   Ж   |   Э   |
- * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  none |   Т   |   Ь   |   Б   |   Ю   |   .   | ENTER |
- *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---|  Sym  | SPACE |  Num  |  none |
+ * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  none |   Т   |   Ь   |   Б   |   Ю   |   .   | trans |
+ *                                 |  GUI  |  Sym  | SHIFT |  Nav  |---| CTRL  | SPACE |  Num  |  none |
  */
            bindings = <
-&kp GRAVE         &kp Q  &kp W  &kp E  &kp R     &kp T                                   &kp Y  &kp U  &kp I    &kp O      &kp P            &kp LBKT
-&kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                   &kp H  &kp J  &kp K    &kp L      &kp SEMI         &kp SQT
+&kp GRAVE         &kp Q  &kp W  &kp E  &kp R     &kp T                                   &kp Y  &kp U    &kp I    &kp O      &kp P            &kp LBKT
+&kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                   &kp H  &kp J    &kp K    &kp L      &kp SEMI         &kp SQT
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                    &none   &kp N  &kp M    &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
                                     &trans   &trans    &trans  &trans    &trans  &trans  &trans    &none
             >;
@@ -174,16 +174,16 @@
         nav_layer {
             /* NAV   
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | Copy  |       | HOME  |  Up   |  END  |       |-----------------------------------|   6   |   7   |   8   |   9   |   0   |  Adj  |
- * | TAB   | CTRL  | Left  | Down  | Right | ReDo  |-----------------------------------| PG UP |  Left |  Up   |  Down | Right | PG DN |
- * | Ctrl  | SHIFT |  Cut  | Copy  | Paste | UnDo  |  ReDo |-------------------| ReDo  |  F6   |  F7   |  F8   |  F9   |  F10  | Ctrl  |
- *                                 |       |       |       |       |---| ADJ_L |       |       |       |
+ * | Copy  |       | HOME  |  Up   |  END  |       |-----------------------------------|       |       |       |       |       |  Adj  |
+ * | TAB   | CTRL  | Left  | Down  | Right | ReDo  |-----------------------------------|       |       |       |       |       |       |
+ * | Ctrl  | SHIFT |  Cut  | Copy  | Paste | UnDo  |  ReDo |-------------------|       |       |       |       |       |       |       |
+ *                                 |       |       |       |       |---|       |       |       |       |
  */
 
             bindings = <
-&kp Copy   &kp HOME    &kp HOME  &kp UP    &kp END    &kp N5                                          &kp N6  &kp N7  &kp N8  &kp N9   &kp N0   &mo 6
-&kp TAB    &kp LCTRL   &kp LEFT  &kp DOWN  &kp RIGHT  &kp Redo                                        &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
-&kp LCTRL  &kp LSHIFT  &kp Cut   &kp Copy  &kp Paste  &kp Undo  &kp Redo                    &kp Redo  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&kp Copy   &trans      &kp HOME  &kp UP    &kp END    &trans                                          &trans  &trans  &trans  &trans   &trans   &mo 6
+&kp TAB    &kp LCTRL   &kp LEFT  &kp DOWN  &kp RIGHT  &kp Redo                                        &trans  &trans  &trans  &trans   &trans   &trans
+&kp LCTRL  &kp LSHIFT  &kp Cut   &kp Copy  &kp Paste  &kp Undo  &kp Redo                    &trans    &trans  &trans  &trans  &trans   &trans   &trans
                                            &trans     &trans    &trans    &trans    &trans  &trans    &trans  &trans
             >;
 
