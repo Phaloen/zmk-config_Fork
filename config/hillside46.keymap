@@ -57,6 +57,14 @@
             bindings = <&kp DEL>;
             key-positions = <16 15>;
         };
+        Combo_SKIPF {
+            bindings = <&kp RC(RIGHT)>;
+            key-positions = <14 15>;
+        };
+        Combo_SKIPF {
+            bindings = <&kp RC(LEFT)>;
+            key-positions = <14 13>;
+        };
         Combo {
             bindings = <&kp BSPC>;
             key-positions = <20 19>;
@@ -95,13 +103,13 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |   Ё   |   Й   |   Ц   |   У   |   К   |   Е   |-----------------------------------|   Н   |   Г   |   Ш   |   Щ   |   З   |   Х   |
  * |   Ъ   |   Ф   |   Ы   |   В   |   А   |   П   |-----------------------------------|   Р   |   О   |   Л   |   Д   |   Ж   |   Э   |
- * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  none |   Т   |   Ь   |   Б   |   Ю   |   .   | trans |
+ * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  GUI  |   Т   |   Ь   |   Б   |   Ю   |   .   | trans |
  *                                 |  GUI  |  Sym  | SHIFT |  Nav  |---| CTRL  | SPACE |  Num  |  none |
  */
            bindings = <
 &kp GRAVE         &kp Q  &kp W  &kp E  &kp R     &kp T                                   &kp Y  &kp U    &kp I    &kp O      &kp P            &kp LBKT
-&kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                   &kp H  &kp J    &kp K    &kp L      &kp SEMI         &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                    &none   &kp N  &kp M    &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
+&kp RBKT          &kp A  &kp S  &kp D  &kp F     &kp G                                   &kp H  &kp J    &kp K    &kp L      &kp SEMI         &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &trans                   &trans  &kp N  &kp M    &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
                                     &trans   &trans    &trans  &trans    &trans  &trans  &trans    &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -127,13 +135,13 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | INS   |   %   |   $   |   €   |   ₽   |   #   |-----------------------------------|   (   |   !   |   '   |   §   |   +   |   *   |
  * | RUS_L |   @   |   /   |   \   |   [   |   ]   |-----------------------------------|   )   |   ?   |   "   |   &   |   -   |   =   |
- * | Ctrl  |   |   |   <   |   >   |   {   |   }   |SkAltGr|-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |   ~   |
+ * | Ctrl  |   |   |   <   |   >   |   {   |   }   |       |-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |   ~   |
  *                                 |       |       |       |  ADJ_L |---|      |       |       |       |
  */
             bindings = <
 &kp INS         &kp LS(N5)    &kp DOLLAR  &kp RA(E)      &none       &kp BSLH                                           &kp ASTRK   &kp EXCL      &kp LS(BSLH)  &kp HASH   &kp RBKT       &kp LS(RBKT)
 &tog RUSSIAN_L  &kp RA(Q)     &kp LS(N7)  &kp RA(MINUS)  &kp RA(N8)  &kp RA(N9)                                         &kp LPAR    &kp UNDER     &kp AT        &kp CARET  &kp SLASH      &kp LS(N0)
-&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &sk RALT                    &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(SLASH)  &kp RA(RBKT)
+&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(SLASH)  &kp RA(RBKT)
                                                          &trans      &trans      &trans    &trans    &trans  &trans     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
@@ -157,16 +165,16 @@
         number_layer {
             /* NUMBER
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   F7  |   F8  |   F9  |   -   |   -   |-----------------------------------|  BSPC |   7   |   8   |   9   |   +   |   *   |
+ * |   ^   |   F7  |   F8  |   F9  |   -   |   -   |-----------------------------------|  BSPC |   7   |   8   |   9   |   +   |   *   |
  * | TAB   |   F4  |   F5  |   F6  |   -   |   -   |-----------------------------------|  DEL  |   4   |   5   |   6   |   -   |   =   |
  * | CTRL  |   F1  |   F2  |   F3  |   -   |   -   |  ESC  |-------------------| CAPS W|   0   |   1   |   2   |   3   | ENTER | ENTER |
- *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |       |       |
+ *                                 |   -   |   -   |SK SHFT|  Nav  |---|  Sym  | SPACE |       |       |
  */
             bindings = <
-&kp GRAVE  &kp F7  &kp F8  &kp F9  &kp P     &kp Y                                                     &kp BSPC   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &kp KP_MULTIPLY
-&kp TAB    &kp F4  &kp F5  &kp F6  &kp U     &kp I                                                     &kp DEL    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
-&kp LCTRL  &kp F1  &kp F2  &kp F3  &kp K     &kp X     &kp ESC                             &caps_word  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ENTER  &kp KP_ENTER
-                                   &kp LGUI  &kp LALT  &sk LSHIFT  &mo NAV_L    &mo SYM_L  &kp SPACE   &kp LALT   &kp RGUI
+&kp GRAVE  &kp F7  &kp F8  &kp F9  &none     &none                                           &kp BSPC   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &kp KP_MULTIPLY
+&kp TAB    &kp F4  &kp F5  &kp F6  &none     &none                                           &kp DEL    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
+&kp LCTRL  &kp F1  &kp F2  &kp F3  &none     &none     &none                     &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ENTER  &trans
+                                   &none     &none     &trans   &none    &none   &kp SPACE   &trans     &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
