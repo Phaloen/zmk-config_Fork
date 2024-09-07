@@ -67,7 +67,7 @@
         compatible = "zmk,combos";
         Combo_DEL {
             bindings = <&kp DEL>;
-            key-positions = <3 4>;
+            key-positions = <03 04>;
         };
         Combo_SKIPF {
             bindings = <&kp RC(RIGHT)>;
