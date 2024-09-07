@@ -61,7 +61,7 @@
             bindings = <&kp RC(RIGHT)>;
             key-positions = <14 15>;
         };
-        Combo_SKIPF {
+        Combo_SKIPB {
             bindings = <&kp RC(LEFT)>;
             key-positions = <14 13>;
         };
