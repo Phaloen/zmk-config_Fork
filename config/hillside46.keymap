@@ -28,6 +28,18 @@
             then-layer = <3>;
         };
     };
+    macros {
+        MRUS: MRUS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LGUI>
+                , <&macro_tap &tog RUSSIAN_L>
+                ;
+        };
+    };
     behaviors {
         gr_esc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
@@ -89,7 +101,7 @@
             bindings = <
 &kp ESCAPE        &kp Q  &kp W  &kp E  &kp R     &kp T                                                         &kp Y         &kp U  &kp I      &kp O    &kp P            &kp LBKT
 &kp MINUS         &kp A  &kp S  &kp D  &kp F     &kp G                                                         &kp H         &kp J  &kp K      &kp L    &kp SEMI         &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &none                                       &kp LGUI   &kp N         &kp M  &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B  &MRUS                                       &kp LGUI   &kp N         &kp M  &kp COMMA  &kp DOT  &mt RCTRL SLASH  &trans
                                        &kp LGUI  &mo 2  &kp LSHIFT  &mo NAV_L    &kp RIGHT_CONTROL  &kp SPACE  &mo NUMBER_L  &none
             >;
 
@@ -119,7 +131,7 @@
  * |   Ё   |   Ы   |   У   |   E   |   И   |   Ш   |-----------------------------------|   Щ   |   К   |   С   |   Д   |   З   |   Ц   |
  * |   Ъ   |   .   |   Я   |   А   |   О   |   Ж   |-----------------------------------|   Г   |   Т   |   Н   |   В   |   М   |   Ч   |
  * | CTRL  |   Ю   |   Й   |   Ь   |   Э   |   Ф   | none  |-------------------|  none |   Х   |   П   |   Р   |   Л   |   Б   | ENTER |
- *                                 |  GUI  | BSPC  |SK SHFT|  Nav  |---|  Sym  | SPACE |  Num  |  none |
+ *                                 |  GUI  |       |SK SHFT|  Nav  |---|  Sym  | SPACE |  Num  |  none |
  *
  *           bindings = <
  * &kp GRAVE  &kp S      &kp E  &kp T  &kp B    &kp I                                       &kp O     &kp R  &kp C  &kp L  &kp P      &kp W
@@ -157,7 +169,7 @@
             bindings = <
 &kp INS         &trans        &kp DOLLAR  &kp RA(E)      &kp RA(N8)  &kp BSLH                                           &kp LPAR    &trans        &kp PIPE      &kp LS(N7)  &kp LS(EQUAL)  &kp LS(N8)
 &tog RUSSIAN_L  &trans        &kp PIPE    &kp RA(MINUS)  &kp RA(N8)  &kp RA(N9)                                         &kp RPAR    &kp LS(N7)    &trans        &kp LS(N4)  &kp MINUS      &kp EQUAL
-&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &sk RALT                    &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp LS(MINUS)  &kp LS(MINUS)
+&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &sk RALT                    &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp LS(MINUS)  &none 
                                                          &trans      &trans      &trans    &trans    &trans  &trans     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
@@ -166,15 +178,15 @@
             /* NUMBER
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |   ^   |   F7  |   F8  |   F9  |   -   |   -   |-----------------------------------|  BSPC |   7   |   8   |   9   |   +   |   *   |
- * | TAB   |   F4  |   F5  |   F6  |   -   |   -   |-----------------------------------|  DEL  |   4   |   5   |   6   |   -   |   =   |
- * | CTRL  |   F1  |   F2  |   F3  |   -   |   -   |  ESC  |-------------------| CAPS W|   0   |   1   |   2   |   3   | ENTER | ENTER |
- *                                 |   -   |   -   |SK SHFT|  Nav  |---|  Sym  | SPACE |       |       |
+ * |       |   F4  |   F5  |   F6  |   -   |   -   |-----------------------------------|  DEL  |   4   |   5   |   6   |   -   |   =   |
+ * | CTRL  |   F1  |   F2  |   F3  |   -   |   -   |       |-------------------|       |   0   |   1   |   2   |   3   | ENTER |       |
+ *                                 |   -   |   -   |SK SHFT|       |---|       | SPACE |       |       |
  */
             bindings = <
 &kp GRAVE  &kp F7  &kp F8  &kp F9  &none     &none                                           &kp BSPC   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &kp KP_MULTIPLY
-&kp TAB    &kp F4  &kp F5  &kp F6  &none     &none                                           &kp DEL    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
+&none      &kp F4  &kp F5  &kp F6  &none     &none                                           &kp DEL    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
 &kp LCTRL  &kp F1  &kp F2  &kp F3  &none     &none     &none                     &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ENTER  &trans
-                                   &none     &none     &trans   &none    &none   &kp SPACE   &trans     &none
+                                   &none     &none     &trans   &none    &none   &trans      &trans     &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -206,7 +218,7 @@
  *                                 |       |       |       |       |---|       |       |       |       |
  */
             bindings = <
-&none       &to QWERTY_L  &none         &none         &to RUSSIAN_L  &none                                                     &out OUT_USB  &kp F11  &kp F12       &kp PRINTSCREEN  &ext_power EP_OFF  &ext_power EP_ON
+&none       &to QWERTY_L  &none         &none         &tog RUSSIAN_L &none                                                     &out OUT_USB  &kp F11  &kp F12       &kp PRINTSCREEN  &ext_power EP_OFF  &ext_power EP_ON
 &sys_reset  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4                                              &none         &none    &none         &none            &none              &sys_reset
 &none       &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHIFT     &none         &bt BT_CLR                    &out OUT_TOG  &none         &none    &out OUT_USB  &out OUT_BLE     &none              &bootloader
                                                       &trans         &trans        &trans      &trans    &trans  &trans        &trans        &trans
