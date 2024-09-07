@@ -67,7 +67,7 @@
         compatible = "zmk,combos";
         Combo_DEL {
             bindings = <&kp DEL>;
-            key-positions = <16 15>;
+            key-positions = <3 4>;
         };
         Combo_SKIPF {
             bindings = <&kp RC(RIGHT)>;
@@ -79,11 +79,11 @@
         };
         Combo {
             bindings = <&kp BSPC>;
-            key-positions = <20 19>;
+            key-positions = <15 16>;
         };
         Combo_ENTER {
             bindings = <&kp RET>;
-            key-positions = <21 22>;
+            key-positions = <27 28>;
         };
     };
     keymap {
@@ -93,7 +93,7 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |  ESC  |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Z   |   U   |   I   |   O   |   P   |   Ü   |
  * |   ß   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
- * | CTRL  |   Y   |   X   |   C   |   V   |   B   | none  |-------------------|  GUI  |   N   |   M   |   ,   |   .   |   -   | trans |
+ * | CTRL  |   Y   |   X   |   C   |   V   |   B   | none  |-------------------|  GUI  |   N   |   M   |   ,   |   .   |   -   |       |
  *                                 |  GUI  |  Sym  | SHIFT |  Nav  |---| CTRL  | SPACE |  Num  |  none |
  *  
  */
@@ -115,7 +115,7 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |   Ё   |   Й   |   Ц   |   У   |   К   |   Е   |-----------------------------------|   Н   |   Г   |   Ш   |   Щ   |   З   |   Х   |
  * |   Ъ   |   Ф   |   Ы   |   В   |   А   |   П   |-----------------------------------|   Р   |   О   |   Л   |   Д   |   Ж   |   Э   |
- * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  GUI  |   Т   |   Ь   |   Б   |   Ю   |   .   | trans |
+ * | CTRL  |   Я   |   Ч   |   С   |   м   |   И   | none  |-------------------|  GUI  |   Т   |   Ь   |   Б   |   Ю   |   .   |       |
  *                                 |  GUI  |  Sym  | SHIFT |  Nav  |---| CTRL  | SPACE |  Num  |  none |
  */
            bindings = <
@@ -145,31 +145,31 @@
         sym_layer {
             /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | INS   |   %   |   $   |   €   |   ₽   |   #   |-----------------------------------|   (   |   !   |   '   |   §   |   +   |   *   |
+ * | INS   |   %   |   $   |   €   |       |   #   |-----------------------------------|   (   |   !   |   '   |   §   |   +   |   *   |
  * | RUS_L |   @   |   /   |   \   |   [   |   ]   |-----------------------------------|   )   |   ?   |   "   |   &   |   -   |   =   |
  * | Ctrl  |   |   |   <   |   >   |   {   |   }   |       |-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |   ~   |
  *                                 |       |       |       |  ADJ_L |---|      |       |       |       |
  */
             bindings = <
-&kp INS         &kp LS(N5)    &kp DOLLAR  &kp RA(E)      &none       &kp BSLH                                           &kp ASTRK   &kp EXCL      &kp LS(BSLH)  &kp HASH   &kp RBKT       &kp LS(RBKT)
+&none           &kp LS(N5)    &kp DOLLAR  &kp RA(E)      &none       &kp BSLH                                           &kp ASTRK   &kp EXCL      &kp LS(BSLH)  &kp HASH   &kp RBKT       &kp LS(RBKT)
 &tog RUSSIAN_L  &kp RA(Q)     &kp LS(N7)  &kp RA(MINUS)  &kp RA(N8)  &kp RA(N9)                                         &kp LPAR    &kp UNDER     &kp AT        &kp CARET  &kp SLASH      &kp LS(N0)
-&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(SLASH)  &kp RA(RBKT)
+&none           &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(SLASH)  &kp RA(RBKT)
                                                          &trans      &trans      &trans    &trans    &trans  &trans     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
         symr_layer {
             /* SYMBOLS RUSSIAN
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | INS   |   %   |   $   |   €   |   ₽   |   #   |-----------------------------------|   (   |   !   |   '   |   :   |   +   |   *   |   
- * | RUS_L |   @   |   /   |   \   |   [   |   ]   |-----------------------------------|   )   |   ?   |   "   |   ;   |   -   |   =   | 
- * | Ctrl  |   |   |   <   |   >   |   {   |   }   |SkAltGr|-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |       |
+ * -------------------------------------------------------------------------------------------------------------------------------------   
+ * |       |   %   |       |       |   ₽   |       |-----------------------------------|   (   |   !   |   №   |   :   |   +   |   *   |  %  ₽   (! :+*
+ * | RUS_L |       |   /   |   \   |       |       |-----------------------------------|   )   |   ?   |   "   |   ;   |   -   |   =   |  х/\    )?";-=    
+ * |       |       |       |       |       |       |       |-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |       |             _ 
  *                                 |       |       |       |  ADJ_L |---|      |       |       |       |
  */
             bindings = <
-&kp INS         &trans        &kp DOLLAR  &kp RA(E)      &kp RA(N8)  &kp BSLH                                           &kp LPAR    &trans        &kp PIPE      &kp LS(N7)  &kp LS(EQUAL)  &kp LS(N8)
-&tog RUSSIAN_L  &trans        &kp PIPE    &kp RA(MINUS)  &kp RA(N8)  &kp RA(N9)                                         &kp RPAR    &kp LS(N7)    &trans        &kp LS(N4)  &kp MINUS      &kp EQUAL
-&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &sk RALT                    &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp LS(MINUS)  &none 
+&none           &trans        &none       &none          &kp RA(N8)  &none                                              &kp LPAR    &trans        &LS(N3)       &kp LS(N6)  &kp LS(EQUAL)  &kp LS(N8)
+&tog RUSSIAN_L  &none         &kp PIPE    &kp NUBS       &none       &none                                              &kp RPAR    &kp LS(N7)    &trans        &kp LS(N4)  &kp MINUS      &kp EQUAL
+&none           &none         &none       &none          &none       &none       &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp LS(MINUS)  &none 
                                                          &trans      &trans      &trans    &trans    &trans  &trans     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
@@ -179,13 +179,13 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |   ^   |   F7  |   F8  |   F9  |   -   |   -   |-----------------------------------|  BSPC |   7   |   8   |   9   |   +   |   *   |
  * |       |   F4  |   F5  |   F6  |   -   |   -   |-----------------------------------|  DEL  |   4   |   5   |   6   |   -   |   =   |
- * | CTRL  |   F1  |   F2  |   F3  |   -   |   -   |       |-------------------|       |   0   |   1   |   2   |   3   | ENTER |       |
- *                                 |   -   |   -   |SK SHFT|       |---|       | SPACE |       |       |
+ * |       |   F1  |   F2  |   F3  |   -   |   -   |       |-------------------|       |   0   |   1   |   2   |   3   | ENTER |       |
+ *                                 |   -   |   -   | SHIFT |       |---|       | SPACE |       |       |
  */
             bindings = <
 &kp GRAVE  &kp F7  &kp F8  &kp F9  &none     &none                                           &kp BSPC   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &kp KP_MULTIPLY
 &none      &kp F4  &kp F5  &kp F6  &none     &none                                           &kp DEL    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
-&kp LCTRL  &kp F1  &kp F2  &kp F3  &none     &none     &none                     &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ENTER  &trans
+&none      &kp F1  &kp F2  &kp F3  &none     &none     &none                     &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ENTER  &trans
                                    &none     &none     &trans   &none    &none   &trans      &trans     &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -196,14 +196,14 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Copy  |       | HOME  |  Up   |  END  |       |-----------------------------------|       |       |       |       |       |  Adj  |
  * | TAB   | CTRL  | Left  | Down  | Right | ReDo  |-----------------------------------|       |       |       |       |       |       |
- * | Ctrl  | SHIFT |  Cut  | Copy  | Paste | UnDo  |  ReDo |-------------------|       |       |       |       |       |       |       |
+ * | Ctrl  | SHIFT |  Cut  | Copy  | Paste | UnDo  |       |-------------------|       |       |       |       |       |       |       |
  *                                 |       |       |       |       |---|       |       |       |       |
  */
 
             bindings = <
 &kp Copy   &trans      &kp HOME  &kp UP    &kp END    &trans                                          &trans  &trans  &trans  &trans   &trans   &mo 6
 &kp TAB    &kp LCTRL   &kp LEFT  &kp DOWN  &kp RIGHT  &kp Redo                                        &trans  &trans  &trans  &trans   &trans   &trans
-&kp LCTRL  &kp LSHIFT  &kp Cut   &kp Copy  &kp Paste  &kp Undo  &kp Redo                    &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&kp LCTRL  &kp LSHIFT  &kp Cut   &kp Copy  &kp Paste  &kp Undo  &none                       &trans    &trans  &trans  &trans  &trans   &trans   &trans
                                            &trans     &trans    &trans    &trans    &trans  &trans    &trans  &trans
             >;
 
