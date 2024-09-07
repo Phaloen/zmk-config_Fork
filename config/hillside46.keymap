@@ -67,7 +67,7 @@
         compatible = "zmk,combos";
         Combo_DEL {
             bindings = <&kp DEL>;
-            key-positions = <03 04>;
+            key-positions = <16 15>;
         };
         Combo_SKIPF {
             bindings = <&kp RC(RIGHT)>;
@@ -79,11 +79,11 @@
         };
         Combo {
             bindings = <&kp BSPC>;
-            key-positions = <15 16>;
+            key-positions = <20 19>;
         };
         Combo_ENTER {
             bindings = <&kp RET>;
-            key-positions = <27 28>;
+            key-positions = <21 22>;
         };
     };
     keymap {
