@@ -89,14 +89,6 @@
             bindings = <&kp P>;
             key-positions = <2 3>;
         };
-        Combo_KPZ {
-            bindings = <&kp y>;
-            key-positions = <13 15>;
-        };
-        Combo_SKCRTL {
-            bindings = <&sk LCTRL>;
-            key-positions = <25 26>;
-        };
     };
     keymap {
         compatible = "zmk,keymap";
