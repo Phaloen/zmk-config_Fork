@@ -95,7 +95,7 @@
         };
         Combo_SKCRTL {
             bindings = <&sk LCTRL>;
-            key-positions = <13 5 3>;
+            key-positions = <25 26>;
         };
     };
     keymap {
