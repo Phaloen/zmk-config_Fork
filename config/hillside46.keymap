@@ -87,7 +87,7 @@
         };
         Combo_KPP {
             bindings = <&kp P>;
-            key-positions = <3 4>;
+            key-positions = <2 3>;
         };
     };
     keymap {
