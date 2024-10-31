@@ -149,15 +149,15 @@
         sym_layer {
             /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | INS   |   %   |   $   |   €   |   ₽   |   #   |-----------------------------------|   (   |   !   |   '   |   §   |   +   |   *   |
- * | RUS_L |   @   |   /   |   \   |   [   |   ]   |-----------------------------------|   )   |   ?   |   "   |   &   |   -   |   =   |     
- * | Ctrl  |   |   |   <   |   >   |   {   |   }   |       |-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   _   |   ~   |
+ * |   ^   |   <   |   {   |   [   |   \   |   #   |-----------------------------------|   (   |   !   |   '   |   §   |   +   |   ´   |
+ * |   °   |   >   |   }   |   ]   |   /   |   %   |-----------------------------------|   )   |   ?   |   "   |   &   |   -   |   `   |     
+ * |   ~   |   |   |   @   |   $   |   €   |   ₽   |       |-------------------| MENU  | Mute  | Vol-  | Vol+  | Play  |   *   |   =   |
  *                                 |       |       |       |  ADJ_L |---|      |       |       |       |
  */
             bindings = <
-&kp INS         &kp LS(N5)    &kp DOLLAR  &kp RA(E)      &none       &kp BSLH                                           &kp ASTRK   &kp EXCL      &kp LS(BSLH)  &kp HASH   &kp RBKT       &kp LS(RBKT)
-&tog RUSSIAN_L  &kp RA(Q)     &kp LS(N7)  &kp RA(MINUS)  &kp RA(N8)  &kp RA(N9)                                         &kp LPAR    &kp UNDER     &kp AT        &kp CARET  &kp SLASH      &kp LS(N0)
-&trans          &kp RA(NUBS)  &kp NUBS    &kp LS(NUBS)   &kp RA(N7)  &kp RA(N0)  &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(SLASH)  &kp RA(RBKT)
+&kp GRAVE       &kp NUBS      &kp RA(N7)    &kp RA(N8)  &kp RA(MINUS) &kp BSLH                                          &kp ASTRK   &kp EXCL      &kp LS(BSLH)  &kp HASH   &kp RBKT       &kp EQUAL
+&kp LS(GRAVE)   &kp LS(NUBS)  &kp RA(N0)    &kp RA(N9)  &kp LS(N7)    &kp LS(N5)                                        &kp LPAR    &kp UNDER     &kp AT        &kp CARET  &kp SLASH      &kp LS(EQUAL) 
+&kp RA(RBKT)    &kp RA(NUBS)  &kp RA(Q)     &kp DOLLAR  &kp RA(E)     &none      &none                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp LS(RBKT)   &kp LS(N0)
                                                          &trans      &trans      &trans    &trans    &trans  &trans     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
